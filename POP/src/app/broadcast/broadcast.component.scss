@@ -1,0 +1,16 @@
+li {
+  list-style: none;
+}
+
+.participants {
+  display: flex;
+  flex-direction: row;
+
+  popout-window {
+    margin-right: 2rem;
+  }
+}
+
+button {
+  margin-right: 1rem;
+}

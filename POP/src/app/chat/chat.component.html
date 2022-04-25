@@ -1,0 +1,7 @@
+<h2>{{ name }}</h2>
+
+<form [formGroup]="formGroup">
+  <textarea formControlName="message" rows="10"></textarea>
+  <button (click)="onSend()">Send</button>
+</form>
+

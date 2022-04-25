@@ -1,0 +1,23 @@
+<button (click)="alice.popOut()">Pop-out Alice</button>
+<button (click)="bob.popOut()">Pop-out Bob</button>
+<button (click)="mallory.popOut()">Pop-out Mallory</button>
+
+<div class="participants">
+  <popout-window #alice>
+    <app-chat name="Alice" (send)="onNewMessage($event)" [external-message]="aliceOverride"></app-chat>
+  </popout-window>
+  <popout-window #bob>
+    <app-chat name="Bob" (send)="onNewMessage($event)"></app-chat>
+  </popout-window>
+  <popout-window #mallory>
+    <app-chat name="Mallory" (send)="onSpoof($event)"></app-chat>
+  </popout-window>
+</div>
+
+<div class="broadcast">
+  <ol>
+    <li *ngFor="let message of messages">
+      <strong>{{ message.name }}:</strong> {{ message.message }}
+    </li>
+  </ol>
+</div>
